@@ -1,0 +1,81 @@
+/* *{
+  margin: 0;
+  padding: 0;
+}
+input {
+  width: 200px;
+  height: 50px; /* needed for Firefox*/
+  /* -webkit-appearance :none;
+  -moz-appearance :none;
+  appearance :none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+} */
+
+/* chromium */
+/* input[type="range" ]::-webkit-slider-thumb{
+  height: 16px;
+  aspect-ratio: 1;
+  border-radius: 50%; */
+  /*Bolinha*/
+  /* box-shadow: 0 0 0 20px inset rgb(243, 0, 122); */
+  /*Progresso*/
+  /* border-image: linear-gradient(90deg,rgb(243, 191, 236) , 50%,#ababab 0) 0 1/calc(50% - 5px/2) 100vw/0 calc(100vw );
+  -webkit-appearance: none;
+  appearance: none;
+  transition: .3s; 
+}
+
+
+/* .cont{
+  width: calc(min-content - 20px);
+  height: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+$softcyan : hsl(174, 77%, 80%); 
+$strong-cyan : hsl(174, 86%, 45%);
+$bg-discount : hsl(14, 92%, 95%);
+$light-red : hsl(15, 100%, 70%);
+$cta-text : hsl(226, 100%, 87%);
+$white: #fff;
+$bg-main : hsl(230, 100%, 99%);
+$slider-bar :hsl(224, 65%, 95%);
+$bg-toggle : hsl(223, 50%, 87%);
+$text-color: hsl(225, 20%, 60%);
+$dark-blue : hsl(227, 35%, 25%);
+$list-style-check : url('./assets/icon-check.svg');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+
+
+
+body{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 15px;
+  color:  $dark-blue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('./assets/bg-pattern.svg') no-repeat top left $bg-main;
+
+  // list-style-image: url('./assets/icon-check.svg');
+}
