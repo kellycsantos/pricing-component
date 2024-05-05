@@ -58,7 +58,8 @@ useEffect(() => {
 
           <input type="range"  step={1} min={0} max={4} onChange={(e) => (setValue(Number(e.target.value)))} />
           <div className='value'>
-            <p>${moneyTransform(conditions[value]?.value)} </p>
+            <p>${moneyTransform( yearMode ? conditions[value]?.value * 12 :  conditions[value]?.value)} </p>
+            {/* <p>${moneyTransform(conditions[value]?.value)} </p> */}
             <span className='period'> / {yearMode ? 'year' : 'month'}</span>
           </div>
         </section>
