@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [value, setValue] = useState(0)
   const [yearMode , setYearMode] = useState(false)
 
