@@ -3,7 +3,7 @@ import './App.scss'
 
 function App() {
   const [value, setValue] = useState(0)
-  const [yearMode , setYearMode] = useState(false)
+  const [yearMode, setYearMode] = useState(false)
 
   const conditions = [
     {
@@ -28,56 +28,56 @@ function App() {
     },
   ]
 
-  function checkboxActive(){
+  function checkboxActive() {
     let toogle = document.querySelector('.checkbox')
-    if(yearMode){
+    if (yearMode) {
       toogle?.classList.add("active")
     } else {
       toogle?.classList.remove("active")
     }
   }
 
-    function moneyTransform(value: number){
+  function moneyTransform(value: number) {
 
-      return value.toFixed(2)
+    return value.toFixed(2)
   }
 
-  
-useEffect(() => {
-  checkboxActive()
-}, [yearMode])
+
+  useEffect(() => {
+    checkboxActive()
+  }, [yearMode])
   return (
     <main>
+      <section role="intro" className='intro'>
       <h1>Simple, traffic-based pricing</h1>
       <h2>Sign-up for our 30-day trial. </h2>
-      <h2> No credit card required.</h2>
+      <h2>No credit card required.</h2>
+      </section>
       <article>
         <section role='return' className='return'>
-          <p>{conditions[value]?.views} Pageviews</p>
+          <p className='views'>{conditions[value]?.views} Pageviews</p>
 
-          <input type="range"  step={1} min={0} max={4} onChange={(e) => (setValue(Number(e.target.value)))} />
+          <input type="range" className='range' step={1} min={0} max={4} onChange={(e) => (setValue(Number(e.target.value)))} />
           <div className='value'>
-            <p>${moneyTransform( yearMode ? conditions[value]?.value * 12 :  conditions[value]?.value)} </p>
-            {/* <p>${moneyTransform(conditions[value]?.value)} </p> */}
+            <p>${moneyTransform(yearMode ? conditions[value]?.value * 12 : conditions[value]?.value)} </p>
             <span className='period'> / {yearMode ? 'year' : 'month'}</span>
           </div>
         </section>
         <section className='subscription-container' role='subscription-mode'>
-          <div>
-            Monthly Billing
+          
+            <p> Monthly Billing</p>
 
             <label htmlFor='mode' className="checkbox">
               <span className='checkbox_container'>
-                <input id='mode' name='mode' type="checkbox" onChange={ (e ) => setYearMode(e.target.checked)} />
+                <input id='mode' name='mode' type="checkbox" onChange={(e) => setYearMode(e.target.checked)} />
                 <div className="ball"></div>
               </span>
             </label>
 
-
-            Yearly Billing
-          </div>
+            <p>Yearly Billing</p>
           <span className='discount'>-25%</span>
           {/* <span className='discount'>25% discount Unlimited</span> */}
+   
         </section>
         <footer>
           <ul role='list'>

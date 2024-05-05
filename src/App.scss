@@ -58,31 +58,33 @@
 main {
   text-align: center;
   line-height: 2rem;
+  width: clamp(300px, 88vw, 480px);
 
   h1 {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   h2 {
     font-size: 1rem;
     font-weight: 400;
   }
-
-  width: clamp(300px, 88vw, 480px);
-
+  .intro{
+    background: url('./assets/pattern-circles.svg') no-repeat center;
+    padding-block: 50px;
+  }
   article {
     background: $white;
     border-radius: 10px;
     box-shadow: 2px 8px 12px rgba($dark-blue, .2);
-    padding-block: 45px;
+    padding-block: 40px;
 
     .return {
-      border: 1px solid red;
-
+        padding-bottom: 30px;
       p {
         text-transform: uppercase;
         font-weight: 600;
+
       }
 
       .value {
@@ -112,10 +114,10 @@ main {
       justify-content: center;
       flex-shrink: 1;
       flex-grow: 0;
+      align-items: center;
 
-      div {
-        margin-right: 10px;
-        display: flex;
+      .checkbox{
+        margin-inline: 10px;
       }
 
       .discount {
@@ -126,6 +128,7 @@ main {
         border-radius: 8px;
         padding: 0 8px;
         align-self: center;
+        margin-left: 5px;
       }
     }
   }
@@ -158,6 +161,7 @@ input[type="range"] {
   appearance: none;
   overflow: hidden;
   width: 80%;
+  margin-block: 35px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -165,10 +169,9 @@ input[type="range"]::-webkit-slider-thumb {
   aspect-ratio: 1;
   border-radius: 50%;
   /*Bolinha*/
-  // background:   no-repeat center;
   box-shadow: 40px 0 0 0px inset $strong-cyan ;
   /*Progresso*/
-  border-image: linear-gradient(90deg, $softcyan , 50%, $slider-bar 0) 0 1/calc(50% - 5px/2) 100vw/0 calc(100vw);
+  border-image: linear-gradient(90deg, $softcyan , 50%, $slider-bar 0) 0 1/calc(50% - 8px/2) 100vw/0 calc(100vw);
   -webkit-appearance: none;
   appearance: none;
   transition: .3s;
@@ -213,4 +216,46 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked+.ball {
   overflow: hidden;
   left: calc(97% - 15px);
+}
+
+@media screen and (min-width: 768px) {
+  .intro{
+    margin-bottom: 30px;
+    h1 {
+      font-size: 1.8rem !important ;
+      font-weight: 900;
+      padding-bottom: 8px;
+    }
+
+    h2{
+      display: inline;
+    }
+  }
+
+  .return{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .views{
+      order: 0;
+    }
+    .value{
+      order: 1;
+    }
+    .range{
+      order: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  .subscription-container{
+    margin-bottom: 40px;
+  }
+
+  footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+  }
 }
